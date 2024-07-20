@@ -2,17 +2,25 @@ const express = require('express');
 const http = require('http');
 const socketIo = require('socket.io');
 const mongoose = require('mongoose');
+<<<<<<< HEAD
 const cors = require('cors');
 
 
 const app = express();
 
 const server = http.createServer(app);
+=======
+const cors=require('cors');
+>>>>>>> afd56850ec5683a1bd4198bd58928d6ad6291e74
 
 // Import routes
 const UserRoute = require('./routes/userRoutes');
 const chatRoute = require('./routes/chatRoutes');
 
+
+// Middleware for cors
+
+app.use(cors({origin:"http://localhost:5173"}));
 // Middleware for parsing JSON
 
 app.use(express.json());
