@@ -1,0 +1,87 @@
+.App {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.chat-box {
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 400px;
+    height: 400px;
+    overflow-y: scroll;
+    margin: 0 auto 20px;
+}
+
+.message {
+    margin: 10px 0;
+}
+
+.message.user {
+    text-align: right;
+    color: blue;
+}
+
+input {
+    width: 300px;
+    padding: 10px;
+}
+
+button {
+    padding: 10px;
+}
+
+
+.main_box {
+    width: 60%;
+    margin: 50px auto;
+}
+
+.brand {
+    width: 500px;
+    padding: 5px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 0px;
+    background-color: #8F8BE8;
+}
+
+.content {
+    width: 500px;
+    min-height: 400px;
+    max-height: 500px;
+    border: 1px solid black;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+#inputbox {
+    padding: 5px;
+    border: 1px solid black;
+}
+
+
+#btn {
+    display: none;
+}
+
+.message {
+    padding: 20px;
+    border-radius: 4px;
+    margin-bottom: 40px;
+    max-width: 300px;
+    position: relative;
+}
+
+.incoming {
+    background: #8F8BE8;
+    color: #fff;
+}
+
+.outgoing {
+    background: #e9eafd;
+    color: #787986;
+    margin-left: auto;
+}
