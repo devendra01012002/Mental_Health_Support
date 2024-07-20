@@ -1,35 +1,29 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import SignIn from './Components/authentication/SignIn';
+import Register from './Components/authentication/Register';
+import HomePage from './Components/Home/HomePage';
+import Textresource from './Components/Resources/Textresource';
+import VideoResource from './Components/Resources/VideoResource';
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const isAuthenticated = () => {
+    const token = localStorage.getItem('token');
+    return token !== null;
+  };
+  
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div>
+      <Routes>
+        <Route path="/login" element={<SignIn />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/" element={isAuthenticated() ? <HomePage /> : <Navigate to="/login" />} />
+        <Route path="/textResource" element={<Textresource />} />
+        <Route path="/videoResource" element={<VideoResource />} />
+       </Routes>
+    </div>
+  );
+}   
 
-export default App
+export default App;

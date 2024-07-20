@@ -1,10 +1,15 @@
 const express = require('express');
 const app= express();  
 const mongoose = require('mongoose');
+const cors=require('cors');
 
 // Import routes
 const UserRoute= require('./routes/userRoutes');
 
+
+// Middleware for cors
+
+app.use(cors({origin:"http://localhost:5173"}));
 // Middleware for parsing JSON
 
 app.use(express.json());

@@ -54,7 +54,7 @@ router.post("/login", async (req, res) => {
     const { Email, Password } = req.body;
 
     // Check if aadharCardNumber or password is missing
-    if (!Email || !Password) {
+    if (!Email || !Password) {    
       return res
         .status(400)
         .json({ error: "Email and password are required" });
